@@ -1,6 +1,10 @@
 # EQETool.R ####
-## Ecological Quality Extent (EQE) tool to quantify the impacts and recovery of environmental indices
-## A number of user-generated parameters are required to inform the spatial and temporal scales of pressures
+## OLD Version: no development.
+# DO NOT USE ####
+## Ecological Quality Extent (EQE) tool to quantify the impacts and recovery of
+## environmental indices
+## A number of user-generated parameters are required to inform the spatial
+## and temporal scales of pressures
 
 ## user inputs:
 ## use same symbology as the Cesar paper:
