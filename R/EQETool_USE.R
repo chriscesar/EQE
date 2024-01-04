@@ -62,3 +62,44 @@ final <- list(
   Int = Int, Tdg = Tdg, Trg = Trg, Sgra = Sgra, Totpress = Totpress
 )
 final$Totpress
+
+
+### Excel code to calculate surface:
+
+# IF(
+#   ((IF(
+#     AND((C$6>=Tdp),
+#         (C$6<=(Tdp+Tep)),
+#         ($B60<=Sep)),Int,0))+
+#      (IF(OR(($B60>Sep),(C$6>=Tdp)),0,
+#          (IF(Tdetdur=0,1,(Int+(Tdg*(Tdp-C$6)))))))+
+#      (IF(OR((C$6<=(Tdp+Tep)),($B60>Sep)),0,
+#          (IF($F$3=0,1,
+#              (Int+(Trg*(C$6-(Tdp+Tep))))))))+
+#      (IF(OR(($B60<=Sep),(C$6<Tdp),(C$6>(Tdp+Tep))),0,
+#          (IF(Stra=0,1,(Int+(Sgra*($B60-Sep)))))))+
+#      (IF(OR(($B60<=Sep),(C$6>=Tdp)),0,
+#          IF(OR(Tdetdur=0,Stra=0),1,
+#             (Int+(Tdg*(Tdp-C$6))+
+#                (Sgra*($B60-(Sep)))))))+
+#      (IF(OR((C$6<=(Tdp+Tep)),($B60<=Sep)),0,
+#          (IF(OR($F$3=0,Stra=0),1,
+#              (Int+(Trg*(C$6-(Tdp+Tep)))+
+#                 (Sgra*($B60-Sep))))))))>1,1,
+#   ((IF(AND((C$6>=Tdp),(C$6<=(Tdp+Tep)),($B60<=Sep)),Int,0))+
+#      (IF(OR(($B60>Sep),(C$6>=Tdp)),0,
+#          (IF(Tdetdur=0,1,
+#              (Int+(Tdg*(Tdp-C$6)))))))+
+#      (IF(OR((C$6<=(Tdp+Tep)),($B60>Sep)),0,
+#          (IF($F$3=0,1,(Int+(Trg*(C$6-(Tdp+Tep))))))))+
+#      (IF(OR(($B60<=Sep),(C$6<Tdp),(C$6>(Tdp+Tep))),0,
+#          (IF(Stra=0,1,(Int+(Sgra*($B60-Sep)))))))+
+#      (IF(OR(($B60<=Sep),(C$6>=Tdp)),0,
+#          IF(OR(Tdetdur=0,Stra=0),1,
+#             (Int+(Tdg*(Tdp-C$6))+(Sgra*($B60-(Sep)))))))+
+#      (IF(OR((C$6<=(Tdp+Tep)),($B60<=Sep)),0,
+#          (IF(OR($F$3=0,Stra=0),1,
+#              (Int+(Trg*(C$6-(Tdp+Tep)))+(Sgra*($B60-Sep)
+#                                          )))
+#           ))
+#       )))
