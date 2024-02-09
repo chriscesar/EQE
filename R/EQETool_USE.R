@@ -6,20 +6,20 @@
 ## and temporal scales of pressures
 
 # define user inputs####
-Tactdur = 4 #activity duration
-Tdetdur = 1 #Temporal deterioration duration
-Trecdur = 3 #Temporal recovery
-Ttot = 10 #Temporal total (timescale under consideration)
-Sext = 386.8 #Spatial extent
-Stot = 1143#Total area over which assessment is considered
-Qpot = 0.1 #Potential quality (abs)
-Qexp = 1 #Expected quality (abs)
-Htot = 100#Total area of a given habitat
-Hres = 1 #Resistance of habitat to impact
-Hrec = 1 #Recovery of habitat following impact
-Ttotp = 1 #Temporal total (proportion)
-Stotp  =1 #Total area (proportion)
-Qexpp = 1 #Expected quality (proportion)
+Tactdur <- 4 #activity duration
+Tdetdur <- 1 #Temporal deterioration duration
+Trecdur <- 3 #Temporal recovery
+Ttot <- 10 #Temporal total (timescale under consideration)
+Sext <- 250 #Spatial extent
+Stot <- 1000 #Total area over which assessment is considered
+Qpot <- 0.1 #Potential quality (abs)
+Qexp <- 1 #Expected quality (abs)
+Htot <- 100 #Total area of a given habitat
+Hres <- 1 #Resistance of habitat to impact
+Hrec <- 1 #Recovery of habitat following impact
+Ttotp <- 1 #Temporal total (proportion)
+Stotp <- 1 #Total area (proportion)
+Qexpp <- 1 #Expected quality (proportion)
 
 #Calculate tool parameters ####
 Stra <- Sext * 0.5 #Spatial transition
@@ -60,8 +60,9 @@ final <- list(
   Stp = Stp, Stotp = Stotp, Qob = Qob, Qtra = Qtra, Qexpp = Qexpp,
   V1 = V1, V2 = V2, V3 = V3, V4 = V4, V5 = V5, V6 = V6,
   Int = Int, Tdg = Tdg, Trg = Trg, Sgra = Sgra, Totpress = Totpress
-)
-final$Totpress
+  )
+
+print(paste0(" ",round(final$Totpress*100,2),"% change in habitat quality"))
 
 
 ### Excel code to calculate surface:
